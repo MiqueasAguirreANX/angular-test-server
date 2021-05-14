@@ -1,0 +1,12 @@
+POST http://localhost:3000/projects
+content-type: application/json
+
+{
+    "id": null,
+    "name": "Landing Page",
+    "description": "Desc 1",
+    "cretedAt": null,
+    "manager": "Frodo bolson",
+    "assignedTo": "Gandalf",
+    "status": "Enabled"
+}

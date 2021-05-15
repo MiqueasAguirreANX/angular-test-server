@@ -9,7 +9,7 @@ var mysql = require('mysql');
 var config = require('./config.js')
 var app = express();
 
-var db = mysql.createConnection ({
+var db = mysql.createPool ({
     host: config.HOST,
     user: config.USER,
     password: config.PASSWORD,

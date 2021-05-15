@@ -43,6 +43,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+
+app.get("/", (req, res) => {
+    res.send("ANGULAR API")
+})
 app.use('/projects', projectsRouter);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

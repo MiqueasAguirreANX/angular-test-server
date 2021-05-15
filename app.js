@@ -11,10 +11,10 @@ require('dotenv').config()
 var app = express();
 
 var db = mysql.createConnection ({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: 'angulartest'
+    host: 'us-cdbr-east-03.cleardb.com',
+    user: 'b65903fc27ee44',
+    password: '241ea035',
+    database: 'heroku_1b2580197163e73'
 });
 
 db.connect((err)=>{

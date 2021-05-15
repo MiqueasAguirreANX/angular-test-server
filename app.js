@@ -1,13 +1,12 @@
 var express = require('express');
-var path = require('path');
 var cookieParser = require('cookie-parser');
 var cors = require('cors')
 var logger = require('morgan');
-
+require('dotenv').config()
 var projectsRouter = require('./routes/projects');
 const PORT = process.env.PORT || 3050;
 var mysql = require('mysql');
-require('dotenv').config()
+
 var app = express();
 
 var db = mysql.createConnection ({
@@ -43,7 +42,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/projects', projectsRouter);
 

@@ -17,9 +17,10 @@ var db = mysql.createPool ({
 });
 
 // open the MySQL connection
-db.connect(error => {
+db.getConnection((error, connection) => {
     if (error) throw error;
     console.log("Successfully connected to the database.");
+    connection.release();
 });
   
 

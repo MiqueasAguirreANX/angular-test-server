@@ -32,7 +32,7 @@ db.connect(error => {
         })
 });
   
-
+ 
 /*
 CREATE TABLE projects (
     id INT AUTO_INCREMENT PRIMARY KEY,

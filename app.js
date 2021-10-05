@@ -43,7 +43,7 @@ CREATE TABLE projects (
     assignedTo VARCHAR(80),
     status VARCHAR(80)
 */
-global.db = db;
+global.db = db; 
 
 app.use(cors())
 app.use(logger('dev'));

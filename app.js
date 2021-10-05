@@ -13,7 +13,7 @@ var db = mysql.createConnection ({
     user: 'root',
     password: 'testuser1234',
     database: 'angulartest'
-});
+}); 
 
 // open the MySQL connection
 db.connect(error => {

@@ -54,7 +54,7 @@ var projectsRouter = require('./routes/projects');
  
 app.get("/", (req, res) => {
     res.send("ANGULAR API")
-}) 
+})  
 app.use('/projects', projectsRouter);
  
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

